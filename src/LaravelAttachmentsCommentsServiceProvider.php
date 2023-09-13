@@ -19,7 +19,6 @@ class LaravelAttachmentsCommentsServiceProvider extends PackageServiceProvider
             ->name('laravel-attachments-comments')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_laravel-attachments-comments_table')
-            ->hasCommand(LaravelAttachmentsCommentsCommand::class);
+            ->hasMigration('create_laravel-attachments-comments_table');
     }
 }

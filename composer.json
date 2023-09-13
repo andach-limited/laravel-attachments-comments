@@ -1,8 +1,8 @@
 {
-    "name": "andach-limited/laravel-attachments-comments",
-    "description": "This is my package laravel-attachments-comments",
+    "name": "andach/laravel-attachments-comments",
+    "description": "This is a Laravel package to allow you to add comments and attachments to models.",
     "keywords": [
-        "andach-limited",
+        "andach",
         "laravel",
         "laravel-attachments-comments"
     ],
@@ -24,9 +24,7 @@
         "laravel/pint": "^1.0",
         "nunomaduro/collision": "^7.8",
         "orchestra/testbench": "^8.8",
-        "pestphp/pest": "^2.0",
-        "pestphp/pest-plugin-arch": "^2.0",
-        "pestphp/pest-plugin-laravel": "^2.0"
+        "phpunit/phpunit": "^10.0"
     },
     "autoload": {
         "psr-4": {
@@ -54,8 +52,8 @@
             "@php vendor/bin/testbench serve"
         ],
         "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html ./phpunit_reports",
         "format": "vendor/bin/pint"
     },
     "config": {

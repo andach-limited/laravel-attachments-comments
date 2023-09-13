@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Traits;
+namespace Andach\LaravelAttachmentsComments\Traits;
 
 use DateTime;
 use Illuminate\Database\Eloquent\Collection;

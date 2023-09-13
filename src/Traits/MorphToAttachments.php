@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Traits;
+namespace Andach\LaravelAttachmentsComments\Traits;
 
 use Auth;
 use Illuminate\Database\Eloquent\Relations\MorphMany;

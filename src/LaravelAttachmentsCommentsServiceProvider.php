@@ -4,7 +4,7 @@ namespace Andach\LaravelAttachmentsComments;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Andach\LaravelAttachmentsComments\Commands\LaravelAttachmentsCommentsCommand;
+use Spatie\LaravelPackageTools\Commands\InstallCommand;
 
 class LaravelAttachmentsCommentsServiceProvider extends PackageServiceProvider
 {

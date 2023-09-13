@@ -22,9 +22,15 @@ class LaravelAttachmentsCommentsServiceProvider extends PackageServiceProvider
             ->hasMigration('create_attachments_comments_table')
             ->hasInstallCommand(function(InstallCommand $command) {
                 $command
+                    ->startWith(function(InstallCommand $command) {
+                        $command->info('Hello, and welcome to my great new package!');
+                    })
                     ->publishConfigFile()
                     ->publishMigrations()
-                    ->askToStarRepoOnGitHub('andach-limited/laravel-attachments-comments');
+                    ->askToStarRepoOnGitHub('andach-limited/laravel-attachments-comments')
+                    ->endWith(function(InstallCommand $command) {
+                        $command->info('Have a great day!');
+                    });
             });
     }
 }

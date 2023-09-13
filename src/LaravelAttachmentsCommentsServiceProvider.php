@@ -24,7 +24,7 @@ class LaravelAttachmentsCommentsServiceProvider extends PackageServiceProvider
                 $command
                     ->publishConfigFile()
                     ->publishMigrations()
-                    ->askToStarRepoOnGitHub();
+                    ->askToStarRepoOnGitHub('andach-limited/laravel-attachments-comments');
             });
     }
 }

@@ -14,9 +14,9 @@ return new class extends Migration
             $table->string('attachable_type');
 
             if (config('yourpackage.user_id_type') === 'uuid') {
-                $table->uuid('user_id');
+                $table->uuid('user_id')->nullable();
             } else {
-                $table->unsignedBigInteger('user_id');
+                $table->unsignedBigInteger('user_id')->nullable();
             }
 
             $table->text('description');
@@ -31,9 +31,9 @@ return new class extends Migration
             $table->string('commentable_type');
 
             if (config('yourpackage.user_id_type') === 'uuid') {
-                $table->uuid('user_id');
+                $table->uuid('user_id')->nullable();
             } else {
-                $table->unsignedBigInteger('user_id');
+                $table->unsignedBigInteger('user_id')->nullable();
             }
 
             $table->text('description');

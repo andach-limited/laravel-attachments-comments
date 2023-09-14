@@ -30,7 +30,7 @@ php artisan attachments-comments:install
 
 ## Config
 
-The config file has just a single option, which is whether your user ID is an integer or a uuid. Set this either using the ANDACH_ATTACHCOMMENT_USER_ID_TYPE env variable, or by editing the config file directly as needed. If unspecified, it will default to "int".
+TODO
 
 ## Usage
 

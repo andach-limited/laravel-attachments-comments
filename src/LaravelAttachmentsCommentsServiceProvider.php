@@ -4,7 +4,7 @@ namespace Andach\LaravelAttachmentsComments;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Andach\LaravelAttachmentsComments\Console\InstallCommand;
+use Spatie\LaravelPackageTools\Commands\InstallCommand;
 
 class LaravelAttachmentsCommentsServiceProvider extends PackageServiceProvider
 {
@@ -20,17 +20,17 @@ class LaravelAttachmentsCommentsServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasViews()
             ->hasMigration('create_attachments_comments_table')
-            ->hasInstallCommand(InstallCommand::class);
-//            ->hasInstallCommand(function(InstallCommand $command) {
-//                $command
-//                    ->startWith(function(InstallCommand $command) {
-//                        $command->info('Hello, and welcome to my great new package!');
-//                    })
-//                    ->publishConfigFile()
-//                    ->publishMigrations()
-//                    ->askToStarRepoOnGitHub('andach-limited/laravel-attachments-comments')
-//                    ->endWith(function(InstallCommand $command) {
-//                        $command->info('Have a great day!');
-//                    });
+            ->hasInstallCommand(function(InstallCommand $command) {
+                $command
+                    ->startWith(function (InstallCommand $command) {
+                        $command->info('Hello, and welcome to my great new package!');
+                    })
+                    ->publishConfigFile()
+                    ->publishMigrations()
+                    ->askToStarRepoOnGitHub('andach-limited/laravel-attachments-comments')
+                    ->endWith(function (InstallCommand $command) {
+                        $command->info('Have a great day!');
+                });
+            });
     }
 }

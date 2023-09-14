@@ -13,7 +13,7 @@ return new class extends Migration
             $table->uuid('attachable_id');
             $table->string('attachable_type');
 
-            if(config('yourpackage.user_id_type') === 'uuid') {
+            if (config('yourpackage.user_id_type') === 'uuid') {
                 $table->uuid('user_id');
             } else {
                 $table->unsignedBigInteger('user_id');
@@ -30,7 +30,7 @@ return new class extends Migration
             $table->uuid('commentable_id');
             $table->string('commentable_type');
 
-            if(config('yourpackage.user_id_type') === 'uuid') {
+            if (config('yourpackage.user_id_type') === 'uuid') {
                 $table->uuid('user_id');
             } else {
                 $table->unsignedBigInteger('user_id');

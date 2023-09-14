@@ -75,7 +75,25 @@ public function store(Request $request)
 }
 ```
 
-### Adding 
+If handed an empty string or null attachment, the system will not create an attachment or comment silently.
+
+### Retrieving Attachments and Comments
+
+The relations are all handled by the traits, so you can just call:
+
+``` 
+$model = new MyModel();
+
+foreach ($model->attachments as $attachment)
+{
+    // ...
+}
+
+foreach ($model->comments as $comment)
+{
+    // ...
+}
+```
 
 ## Changelog
 

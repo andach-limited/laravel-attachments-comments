@@ -34,17 +34,48 @@ The config file has just a single option, which is whether your user ID is an in
 
 ## Usage
 
-```php
-$laravelAttachmentsComments = new Andach\LaravelAttachmentsComments();
+### Using a Trait
 
-echo $laravelAttachmentsComments->echoPhrase('Hello, Andach!');
+To add the relations to a model, simply add the `MorphToAttachmentsAndComments` trait to the model. If only one is needed, then just use `MorphToAttachments` or `MorphToComments` by themselves.
+
+```
+class MyModel extends Model
+{
+    use MorphToAttachmentsAndComments;
+
+    // ...
+}
 ```
 
-## Testing
+### Adding Attachments and/or Comments
 
-```bash
-composer test
+To actually add an attachment or a comment, you can use the `addAttachmentAndComment()`. This accepts a single string and an optional UploadedFile.
+
 ```
+<form action="{{ route('my-model.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+
+    <input type="text" name="comment" />
+    <input type="file" name="attachment" />
+
+    <button type="submit">Submit</button>
+</form>
+```
+
+And in the relevant controller method...
+
+```
+public function store(Request $request)
+{
+    $model = MyModel::create();
+
+    $model->addAttachmentAndComment($request->comment, $request->attachment);
+
+    return redirect()->route('my-model.show', $model);
+}
+```
+
+### Adding 
 
 ## Changelog
 

@@ -2,6 +2,8 @@
 
 namespace Andach\LaravelAttachmentsComments;
 
+use Andach\LaravelAttachmentsComments\Models\Attachment;
+use Andach\LaravelAttachmentsComments\Models\Comment;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
@@ -18,7 +20,8 @@ class LaravelAttachmentsCommentsServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-attachments-comments')
             ->hasConfigFile()
-            ->hasViews()
+            ->hasViewComponents('andach', Attachment::class)
+            ->hasViewComponents('andach', Comment::class)
             ->hasMigration('create_attachments_comments_table')
             ->hasInstallCommand(function(InstallCommand $command) {
                 $command

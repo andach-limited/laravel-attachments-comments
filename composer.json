@@ -34,8 +34,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Andach\\LaravelAttachmentsComments\\Tests\\": "tests/",
-            "Workbench\\App\\": "workbench/app/"
+            "Andach\\LaravelAttachmentsComments\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -67,10 +66,7 @@
         "laravel": {
             "providers": [
                 "Andach\\LaravelAttachmentsComments\\LaravelAttachmentsCommentsServiceProvider"
-            ],
-            "aliases": {
-                "LaravelAttachmentsComments": "Andach\\LaravelAttachmentsComments\\Facades\\LaravelAttachmentsComments"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",

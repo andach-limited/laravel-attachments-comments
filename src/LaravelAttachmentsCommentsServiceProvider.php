@@ -1,6 +1,6 @@
 <?php
 
-namespace Andach\LaravelAttachmentsComments\Console;
+namespace Andach\LaravelAttachmentsComments;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;

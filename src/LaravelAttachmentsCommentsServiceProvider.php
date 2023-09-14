@@ -20,8 +20,7 @@ class LaravelAttachmentsCommentsServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-attachments-comments')
             ->hasConfigFile()
-            ->hasViewComponents('andach', Attachment::class)
-            ->hasViewComponents('andach', Comment::class)
+            ->hasViewComponents('andach', Attachment::class, Comment::class)
             ->hasMigration('create_attachments_comments_table')
             ->hasInstallCommand(function(InstallCommand $command) {
                 $command

@@ -27,6 +27,6 @@ class Comment extends Model
 
     public function getDisplayHtmlAttribute(): string
     {
-        return '<x-andach-chat name="' . $this->user->name . '" time="' . $this->created_at . '" userID="' . $this->user->id . '" picture="' . $this->user->image_url . '">' . $this->description . '</x-chat>';
+        return '<x-andach-chat name="'.$this->user->name.'" time="'.$this->created_at.'" userID="'.$this->user->id.'" picture="'.$this->user->image_url.'">'.$this->description.'</x-chat>';
     }
 }

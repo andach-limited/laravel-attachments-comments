@@ -12,14 +12,14 @@ trait MorphToAttachments
     public function addAttachment(?string $newComment, UploadedFile $newAttachment): void
     {
         $uuid = Uuid::uuid4();
-        $path = $newAttachment->storeAs('public/attachments', $uuid . '.' . $newAttachment->getClientOriginalExtension());
+        $path = $newAttachment->storeAs('public/attachments', $uuid.'.'.$newAttachment->getClientOriginalExtension());
         $path = str_replace('public/', '', $path);
 
         $this->attachments()->create([
-            'id'          => $uuid,
-            'user_id'     => Auth::id(),
+            'id' => $uuid,
+            'user_id' => Auth::id(),
             'description' => $newComment,
-            'file_path'   => $path,
+            'file_path' => $path,
         ]);
     }
 

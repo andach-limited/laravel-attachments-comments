@@ -20,15 +20,15 @@ class Attachment extends Component
         $fileExtension = pathinfo($attachmentUrl, PATHINFO_EXTENSION);
 
         // Determine what kind of content to display based on the file extension
-        if ('pdf' === strtolower($fileExtension)) {
+        if (strtolower($fileExtension) === 'pdf') {
             $this->attachmentImage = '<i class="fas fa-file-pdf" style="width: 100px; height: 100px; display: inline-block; font-size: 100px;"></i>';
         } elseif (in_array(strtolower($fileExtension), ['doc', 'docx'])) {
             $this->attachmentImage = '<i class="fas fa-file-word" style="width: 100px; height: 100px; display: inline-block; font-size: 100px;"></i>';
         } elseif (in_array(strtolower($fileExtension), ['png', 'jpg', 'jpeg'])) {
-            $this->attachmentImage = '<img class="rounded-lg shadow-md mb-1" src="' . $attachmentUrl . '" width="240" height="180" alt="Chat image">';
+            $this->attachmentImage = '<img class="rounded-lg shadow-md mb-1" src="'.$attachmentUrl.'" width="240" height="180" alt="Chat image">';
         }
 
-        $this->attachmentImage = '<a href="' . $this->attachmentUrl . '">' . $this->attachmentImage . '</a>';
+        $this->attachmentImage = '<a href="'.$this->attachmentUrl.'">'.$this->attachmentImage.'</a>';
     }
 
     /**

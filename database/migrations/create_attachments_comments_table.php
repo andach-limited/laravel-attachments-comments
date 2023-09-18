@@ -1,0 +1,46 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up()
+    {
+        Schema::create('attachments', function (Blueprint $table): void {
+            $table->uuid('id')->primary();
+            $table->uuid('attachable_id');
+            $table->string('attachable_type');
+
+            if (config('attachments-comments.user_id_type') === 'uuid') {
+                $table->uuid('user_id')->nullable();
+            } else {
+                $table->unsignedBigInteger('user_id')->nullable();
+            }
+
+            $table->string('name')->nullable();
+            $table->text('description')->nullable();
+            $table->text('file_path');
+            $table->timestamps();
+            $table->softDeletes();
+        });
+
+        Schema::create('comments', function (Blueprint $table): void {
+            $table->uuid('id')->primary();
+            $table->uuid('commentable_id');
+            $table->string('commentable_type');
+
+            if (config('attachments-comments.user_id_type') === 'uuid') {
+                $table->uuid('user_id')->nullable();
+            } else {
+                $table->unsignedBigInteger('user_id')->nullable();
+            }
+
+            $table->string('name')->nullable();
+            $table->text('description');
+            $table->timestamps();
+            $table->softDeletes();
+        });
+    }
+};

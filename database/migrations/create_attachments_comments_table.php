@@ -13,13 +13,14 @@ return new class extends Migration
             $table->uuid('attachable_id');
             $table->string('attachable_type');
 
-            if (config('yourpackage.user_id_type') === 'uuid') {
+            if (config('attachments-comments.user_id_type') === 'uuid') {
                 $table->uuid('user_id')->nullable();
             } else {
                 $table->unsignedBigInteger('user_id')->nullable();
             }
 
-            $table->text('description');
+            $table->string('name')->nullable();
+            $table->text('description')->nullable();
             $table->text('file_path');
             $table->timestamps();
             $table->softDeletes();
@@ -30,12 +31,13 @@ return new class extends Migration
             $table->uuid('commentable_id');
             $table->string('commentable_type');
 
-            if (config('yourpackage.user_id_type') === 'uuid') {
+            if (config('attachments-comments.user_id_type') === 'uuid') {
                 $table->uuid('user_id')->nullable();
             } else {
                 $table->unsignedBigInteger('user_id')->nullable();
             }
 
+            $table->string('name')->nullable();
             $table->text('description');
             $table->timestamps();
             $table->softDeletes();

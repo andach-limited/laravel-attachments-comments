@@ -1,4 +1,4 @@
-# This is my package laravel-attachments-comments
+# Laravel Attachments and Comments by Andach
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/andach/laravel-attachments-comments.svg?style=flat-square)](https://packagist.org/packages/andach/laravel-attachments-comments)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/andach/laravel-attachments-comments/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/andach/laravel-attachments-comments/actions?query=workflow%3Arun-tests+branch%3Amain)
@@ -13,13 +13,6 @@ You can install the package via composer:
 
 ```bash
 composer require andach-limited/laravel-attachments-comments
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-attachments-comments-migrations"
-php artisan migrate
 ```
 
 You can publish the config and migrations with:
@@ -100,23 +93,6 @@ foreach ($model->comments as $comment)
 ```
 
 ```
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
-
-## Credits
-
-- [Andreas Christodolou](https://github.com/andach-andreas)
-- [All Contributors](../../contributors)
 
 ## License
 

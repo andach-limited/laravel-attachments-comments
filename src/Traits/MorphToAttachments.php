@@ -9,7 +9,7 @@ use Ramsey\Uuid\Uuid;
 
 trait MorphToAttachments
 {
-    public function addAttachment(string $newComment, UploadedFile $newAttachment): void
+    public function addAttachment(?string $newComment, UploadedFile $newAttachment): void
     {
         $uuid = Uuid::uuid4();
         $path = $newAttachment->storeAs('public/attachments', $uuid . '.' . $newAttachment->getClientOriginalExtension());
@@ -25,7 +25,7 @@ trait MorphToAttachments
 
     public function attachments(): MorphMany
     {
-        return $this->morphMany('App\Models\Attachment', 'attachable');
+        return $this->morphMany('Andach\LaravelAttachmentsComments\Models\Attachment', 'attachable');
     }
 
     public function deleteAttachment(string $name): void

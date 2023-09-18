@@ -17,6 +17,6 @@ trait MorphToComments
 
     public function comments(): MorphMany
     {
-        return $this->morphMany('App\Models\Comment', 'commentable');
+        return $this->morphMany('Andach\LaravelAttachmentsComments\Models\Comment', 'commentable');
     }
 }

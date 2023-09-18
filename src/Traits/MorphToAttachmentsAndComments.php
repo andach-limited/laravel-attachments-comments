@@ -12,7 +12,7 @@ trait MorphToAttachmentsAndComments
     use MorphToComments;
 
     // Automatically work out whether a comment or attachment needs to be added based on $request information.
-    public function addAttachmentAndComment(string $newComment, ?UploadedFile $newAttachment = null): void
+    public function addAttachmentAndComment(?string $newComment = null, ?UploadedFile $newAttachment = null): void
     {
         if ($newAttachment) {
             $this->addAttachment($newComment, $newAttachment);

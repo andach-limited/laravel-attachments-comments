@@ -10,7 +10,7 @@ trait MorphToComments
     public function addComment(string $newComment): void
     {
         $this->comments()->create([
-            'user_id'     => Auth::id(),
+            'user_id' => Auth::id(),
             'description' => $newComment,
         ]);
     }

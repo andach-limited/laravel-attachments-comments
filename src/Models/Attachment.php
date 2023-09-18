@@ -30,14 +30,14 @@ class Attachment extends Model
         $return = '';
 
         if ($this->description) {
-            $return .= '<x-andach-chat name="' . $this->user->name . '" time="' . $this->created_at . '" userID="' . $this->user->id . '" picture="' . $this->user->image_url . '">' . $this->description . '</x-chat>';
+            $return .= '<x-andach-chat name="'.$this->user->name.'" time="'.$this->created_at.'" userID="'.$this->user->id.'" picture="'.$this->user->image_url.'">'.$this->description.'</x-chat>';
         }
 
-        return $return . '<x-andach-chat-attachment name="' . $this->user->name . '" time="' . $this->created_at . '" userID="' . $this->user->id . '" picture="' . $this->user->image_url . '" attachmentUrl="' . $this->href . '"></x-chat>';
+        return $return.'<x-andach-chat-attachment name="'.$this->user->name.'" time="'.$this->created_at.'" userID="'.$this->user->id.'" picture="'.$this->user->image_url.'" attachmentUrl="'.$this->href.'"></x-chat>';
     }
 
     public function getHrefAttribute(): string
     {
-        return '/storage/' . e($this->file_path);
+        return '/storage/'.e($this->file_path);
     }
 }

@@ -15,15 +15,11 @@ You can install the package via composer:
 composer require andach-limited/laravel-attachments-comments
 ```
 
-You can publish the config and migrations with:
+You should then publish the config and migrations with:
 
 ```bash
 php artisan attachments-comments:install
 ```
-
-## Config
-
-TODO
 
 ## Usage
 
